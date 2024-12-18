@@ -11,7 +11,7 @@ const port = 3000;
 const db = process.env.DB;  // Get the connection string from the environment variable
 
 let dbstring = String(db);
-mongoose.connect(dbstring, {
+mongoose.connect(db, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
