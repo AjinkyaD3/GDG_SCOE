@@ -7,15 +7,15 @@ const adminRoutes = require('./routes/adminRoutes');
 
 const app = express();
 const port = 3000;
-mongoose.connect('mongodb://127.0.0.1:27017/blogDB', { 
-    useNewUrlParser: true, 
-    useUnifiedTopology: true 
-  }); 
-   
-  app.use(bodyParser.json()); 
-  app.use('/uploads', express.static(path.join(__dirname, 'uploads'))); 
-  app.use('/api/blogs', blogRoutes); 
-  app.use('/api/admin', adminRoutes); 
+mongoose.connect('mongodb+srv://ajinkya:optionchain@optionchain.y4jyr.mongodb.net/', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+});
+
+app.use(bodyParser.json());
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+app.use('/api/blogs', blogRoutes);
+app.use('/api/admin', adminRoutes);
 
 // Serve static files from the 'public' folder
 app.use(express.static(path.join(__dirname, 'public'))); app.get('/', (req, res) => {

@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="CSS/style.css">
     <link rel="stylesheet" href="CSS/responsive.css">
     <link rel="stylesheet" href="CSS/scrollbar.css">
+    <link rel="stylesheet" href="CSS/movingtext.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/linuxguist/faqa@main/styles.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/linuxguist/faqa@main/stylesheet.css">
@@ -60,16 +61,32 @@
         </div>
     </nav>
     <section class="home mt-5" id="home">
-        <div class="body">
-            <div class="content">
-                <h1><span>GDG</span> SCOE</h1>
-                <h2>Google Developer Group SCOE</h2>
-                <img id="bg-img" src="assets/gdsc/gdsc-club.png" alt="">
-            </div>
-            <div class="circle">
-                <div class="circle1"></div>
-                <div class="circle2"></div>
-                <div class="circle3"></div>
+        <div class="background-overlay"></div>
+        <!-- Logo Section -->
+        <div class="logo-container">
+            <img src="/assets/gdsc/gdsc-logo.png" alt="" class="logo-image">
+            GDG ON CAMPUS SCOE
+        </div>
+        <!-- circle class css add karay ch ahe  -->
+
+        <div class="landing-container">
+            <div class="text-container">
+                <div class="motion-text" id="text1">
+                    Google <span class="highlight-text"> Google </span> Google <span
+                        class="highlight-text">Google</span>
+                    Google <span class="highlight-text"> Google </span> Google<span class="highlight-text"> Google
+                    </span>
+                    Google <span class="highlight-text">Google</span> Google <span class="highlight-text"> Google
+                    </span> Google Google
+                </div>
+                <div class="motion-text" id="text2">
+                    Developer Developer Developer <span class="highlight-text">Developer</span> Developer Developer
+                    Developer
+                </div>
+                <div class="motion-text" id="text3">
+                    Group Group Group Group<span class="highlight-text">Group</span> Group Group Group Group
+                </div>
+
             </div>
         </div>
     </section>
@@ -83,9 +100,9 @@
                 <h2 class="text-bold">What Is GDG?</h2>
                 <p class="text-gray">Helping students bridge the gap between Theory and Practice.</p>
                 <p class="text-gray"><span class="text-red">Google</span> <span class="text-blue">Developer</span> <span
-                        class="text-yellow">Student</span> <span class="text-green">Clubs</span> are university based
+                        class="text-yellow">Group</span> <span class="text-green">SCOE</span> are university based
                     community groups for students interested in Google deve technologies. Students from all
-                    undergraduate or graduate programs wi interest in growing developer are welcome. By joining a GDSC,
+                    undergraduate or graduate programs wi interest in growing developer are welcome. By joining a GDG,
                     students grow their knowledge in a peer-to learning enviro and build solutions for local businesses
                     and their community.</p>
                 <h3 class="text-bold">Welcoming, you all To GDG SCOE.</h3>
@@ -105,9 +122,9 @@
                     <span class="w-50 text-center">2 Leads</span>
                 </div>
             </div>
-            <div class="domain-card">
-                <img src="assets/domain-logos/app.png" alt="" class="w-50">
-                <h4 class="text-center py-2" data-bs-toggle="modal" data-bs-target="#appdevmodal">App Development</h4>
+            <div class="domain-card centered">
+                <img src="assets/domain-logos/webdev.png" alt="" class="w-50">
+                <h4 class="text-center py-2" data-bs-toggle="modal" data-bs-target="#webdevmodal">Web Development</h4>
                 <div class="domain-info d-flex justify-content-around w-100">
                     <span class="w-50 text-center">2 Members</span>
                     <span>|</span>
@@ -115,8 +132,8 @@
                 </div>
             </div>
             <div class="domain-card">
-                <img src="assets/domain-logos/tech.png" alt="" class="w-50">
-                <h4 class="text-center py-2" data-bs-toggle="modal" data-bs-target="#techmodal">Tech</h4>
+                <img src="assets/domain-logos/app.png" alt="" class="w-50">
+                <h4 class="text-center py-2" data-bs-toggle="modal" data-bs-target="#appdevmodal">App Development</h4>
                 <div class="domain-info d-flex justify-content-around w-100">
                     <span class="w-50 text-center">2 Members</span>
                     <span>|</span>
@@ -143,22 +160,14 @@
             </div>
             <div class="domain-card centered">
                 <img src="assets/domain-logos/cloud.png" alt="" class="w-50">
-                <h4 class="text-center py-2" data-bs-toggle="modal" data-bs-target="#cloudmodal">Cloud</h4>
+                <h4 class="text-center py-2" data-bs-toggle="modal" data-bs-target="#cloudmodal">ML</h4>
                 <div class="domain-info d-flex justify-content-around w-100">
-                    <span class="w-50 text-center">2 Members</span>
+                    <span class="w-50 text-center">1 Members</span>
                     <span>|</span>
-                    <span class="w-50 text-center">2 Leads</span>
+                    <span class="w-50 text-center">1 Leads</span>
                 </div>
             </div>
-            <div class="domain-card centered">
-                <img src="assets/domain-logos/webdev.png" alt="" class="w-50">
-                <h4 class="text-center py-2" data-bs-toggle="modal" data-bs-target="#webdevmodal">Web Development</h4>
-                <div class="domain-info d-flex justify-content-around w-100">
-                    <span class="w-50 text-center">2 Members</span>
-                    <span>|</span>
-                    <span class="w-50 text-center">2 Leads</span>
-                </div>
-            </div>
+
         </div>
     </section>
     <section class="gallery" id="gallery">
