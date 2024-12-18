@@ -1,67 +1,85 @@
-var swiper = new Swiper(".mySwiper", {
+// Initialize Swiper
+const swiper = new Swiper(".mySwiper", {
     navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
     },
+    loop: true, // Enable infinite loop
 });
 
-var acc = document.getElementsByClassName("accordion");
-var i;
-for (i = 0; i < acc.length; i++) {
-    acc[i].addEventListener("click", function () {
-        this.classList.toggle("active");
-        var panel = this.nextElementSibling;
-        if (panel.style.display === "block") {
-            panel.style.display = "none";
-            // clearBox('myDiv_id1')
-        } else {
-            panel.style.display = "block";
-            let firstElementChild = panel.children[0].id;
-            let secondElementChild = panel.children[1].id;
-            // console.log(firstElementChild);
-            // console.log(secondElementChild);
-            printStringByLetter(secondElementChild, firstElementChild);
+// Accordion functionality (double-click on the whole card)
+const accordionCards = document.querySelectorAll(".accordion-card");
+accordionCards.forEach((card) => {
+    card.addEventListener("dblclick", () => {
+        toggleAccordion(card);
+    });
+});
+
+function toggleAccordion(currentCard) {
+    const panel = currentCard.querySelector(".panel"); // Get the panel inside the card
+
+    // Close other accordion panels
+    accordionCards.forEach((card) => {
+        const otherPanel = card.querySelector(".panel");
+        if (card !== currentCard) {
+            card.classList.remove("active");
+            if (otherPanel) otherPanel.style.display = "none";
         }
     });
-}
-var images = document.querySelectorAll(".faq-icon");
-images.forEach(function (image) {
-    image.addEventListener("click", changeImage);
-});
 
-function changeImage() {
-    if (this.src.match("chevron-down")) {
-        this.src = "https://cdn.jsdelivr.net/gh/linuxguist/faqa@main/chevron-up.svg";
-    } else {
-        this.src = "https://cdn.jsdelivr.net/gh/linuxguist/faqa@main/chevron-down.svg";
+    // Toggle the current card's accordion
+    currentCard.classList.toggle("active");
+    if (panel) {
+        if (panel.style.display === "block") {
+            panel.style.display = "none";
+        } else {
+            panel.style.display = "block";
+
+            // Example: Get IDs of the first two children in the panel
+            const firstChildID = panel.children[0]?.id;
+            const secondChildID = panel.children[1]?.id;
+
+            if (firstChildID && secondChildID) {
+                printStringByLetter(secondChildID, firstChildID);
+            }
+        }
     }
 }
 
-function clearBox(elementID) {
-    document.getElementById(elementID).innerHTML = "";
+// Change FAQ icon (if necessary) on double-click
+const icons = document.querySelectorAll(".faq-icon");
+icons.forEach((icon) => {
+    icon.addEventListener("dblclick", toggleFAQIcon); // Double-click for icon toggle
+});
+
+function toggleFAQIcon() {
+    const isChevronDown = this.src.includes("chevron-down");
+    this.src = isChevronDown
+        ? "https://cdn.jsdelivr.net/gh/linuxguist/faqa@main/chevron-up.svg"
+        : "https://cdn.jsdelivr.net/gh/linuxguist/faqa@main/chevron-down.svg";
 }
 
-let accordianHead = Array.from(document.querySelectorAll(".accordian_head"));
+// Clear a specific element's content (utility function)
+function clearBox(elementID) {
+    const element = document.getElementById(elementID);
+    if (element) element.innerHTML = "";
+}
 
-accordianHead.map((item) =>
-    item.addEventListener("click", () => {
-        closeAllAccordian(item);
-    })
-);
+// Example: Utility function to print a string letter by letter
+function printStringByLetter(sourceID, targetID) {
+    const sourceElement = document.getElementById(sourceID);
+    const targetElement = document.getElementById(targetID);
 
-function closeAllAccordian(current_target) {
-    // console.log(current_target);
-    accordianHead.map((item) => {
-        if (current_target !== item) {
-            const accordianBody = item.nextElementSibling;
-            const togglerBtn = item.firstElementChild;
-            togglerBtn.classList.remove("active");
-            accordianBody.classList.remove("active_body");
-        } else {
-            const accordianBody = current_target.nextElementSibling;
-            const togglerBtn = item.firstElementChild;
-            togglerBtn.classList.toggle("active");
-            accordianBody.classList.toggle("active_body");
-        }
-    });
+    if (sourceElement && targetElement) {
+        const text = sourceElement.textContent || sourceElement.innerText;
+        targetElement.innerHTML = ""; // Clear target element content
+
+        // Display text letter by letter
+        let index = 0;
+        const interval = setInterval(() => {
+            targetElement.innerHTML += text[index];
+            index++;
+            if (index >= text.length) clearInterval(interval);
+        }, 100); // Adjust speed as needed
+    }
 }
