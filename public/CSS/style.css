@@ -181,15 +181,15 @@ div.about-left::after {
 div.about-left::before {
     left: -50px;
     top: -50px;
-    border-left: 50px solid var(--google-red);
-    border-top: 50px solid var(--google-red);
+    border-left: 50px solid var(--google-blue);
+    border-top: 50px solid var(--google-blue);
 }
 
 div.about-left::after {
     right: -50px;
     bottom: -50px;
-    border-right: 50px solid var(--google-yellow);
-    border-bottom: 50px solid var(--google-yellow);
+    border-right: 50px solid var(--google-green);
+    border-bottom: 50px solid var(--google-green);
 }
 
 .about-left img {
