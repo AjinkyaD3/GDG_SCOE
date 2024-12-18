@@ -4,10 +4,12 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const blogRoutes = require('./routes/blogRoutes');
 const adminRoutes = require('./routes/adminRoutes');
-
+require('dotenv').config();
 const app = express();
 const port = 3000;
-mongoose.connect('mongodb+srv://ajinkya:optionchain@optionchain.y4jyr.mongodb.net/', {
+
+const db = process.env.db;
+mongoose.connect(db, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
