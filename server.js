@@ -7,7 +7,7 @@ const adminRoutes = require('./routes/adminRoutes');
 
 const app = express();
 const port = 3000;
-mongoose.connect('mongodb+srv://ajinkya:optionchain@optionchain.y4jyr.mongodb.net/', {
+mongoose.connect('mongodb+srv:///', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
