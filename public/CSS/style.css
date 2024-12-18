@@ -814,3 +814,63 @@ body.modal-open {
 .navbar-nav .nav-item .join-us:hover {
     background-color: #0056b3;
 }
+
+
+.team-member-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    object-fit: cover;
+    display: inline-block;
+}
+
+/* Styling the list in modals */
+.modal-body ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.modal-body ul li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.modal-body ul li img {
+    margin-right: 15px;
+}
+
+/* Styling the team cards */
+.domain-card {
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    cursor: pointer;
+}
+
+.domain-card img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.domain-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Centering the domain cards */
+.centered {
+    margin: 10px;
+}
+
+/* Ensuring the text in the modal title and body is centered */
+.modal-title,
+.modal-body {
+    text-align: center;
+}

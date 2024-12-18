@@ -8,8 +8,10 @@ require('dotenv').config();
 const app = express();
 const port = 3000;
 
-const db = process.env.db;
-mongoose.connect(db, {
+const db = process.env.DB;  // Get the connection string from the environment variable
+
+let dbstring = String(db);
+mongoose.connect(dbstring, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
