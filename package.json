@@ -108,6 +108,7 @@
     "vary": "^1.1.2"
   },
   "scripts": {
+    "run":"node server.js",
     "test": "nodemon server.js"
   },
   "author": "AjinkyaD3",
