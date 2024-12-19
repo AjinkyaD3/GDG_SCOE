@@ -639,8 +639,8 @@ textarea:valid+label {
 /* footer  */
 .footer {
     background: linear-gradient(105deg, #3d3d3d, #303030);
-    padding-top: 80px;
-    padding-bottom: 40px;
+    padding-top: 50px;
+    padding-bottom: 20px;
     color: white;
 }
 
@@ -922,4 +922,113 @@ body.modal-open {
 .domain-card:hover {
     transform: scale(1.05);
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+.about-left {
+    position: relative;
+    display: inline-block;
+}
+
+.about-left img {
+    width: 100%;
+    height: auto;
+    display: block;
+    position: relative;
+    z-index: 1; /* Ensures the image appears above the pseudo-elements */
+}
+
+.about-left::before,
+.about-left::after {
+    content: "";
+    position: absolute;
+    z-index: 0; /* Keeps the frame behind the image */
+}
+
+.about-left::before {
+    /* Top-left and bottom-right corners (Red and Blue) */
+    top: -10px;
+    left: -10px;
+    width: 50px;
+    height: 50px;
+    border-left: 5px solid var(--google-red);
+    border-top: 5px solid var(--google-red);
+    border-bottom: 5px solid var(--google-blue);
+    border-right: 5px solid transparent;
+}
+
+.about-left::after {
+    /* Bottom-left and top-right corners (Yellow and Green) */
+    bottom: -10px;
+    right: -10px;
+    width: 50px;
+    height: 50px;
+    /* border-right: 5px solid var(--google-green);
+    border-bottom: 5px solid var(--google-yellow); */
+    border-top: 5px solid transparent;
+    border-left: 5px solid transparent;
+}
+.about-left {
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+}
+
+.decorative-circle {
+    width: 150%;
+    height: 150%;
+    border: 5px solid var(--google-blue);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.2);
+    z-index: -1;
+    background: radial-gradient(circle, var(--google-yellow) 20%, var(--google-red) 100%);
+}
+
+.image-overlay {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 1rem 1.5rem;
+    border-radius: 1rem;
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, var(--google-red), var(--google-yellow), var(--google-green), var(--google-blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.about-left {
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+}
+
+.decorative-frame {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    border: 8px dashed var(--google-red);
+    border-radius: 10px;
+    background: repeating-linear-gradient(45deg, var(--google-yellow), var(--google-yellow) 10px, var(--google-blue) 10px, var(--google-blue) 20px);
+    z-index: -1;
+    animation: framePulse 3s infinite;
+}
+
+
+
+.about-left img {
+    border-radius: 20px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.image-overlay {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, var(--google-red), var(--google-blue), var(--google-yellow), var(--google-green));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
