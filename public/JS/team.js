@@ -4,22 +4,22 @@ $(document).ready(function () {
 
     // Local team data (dummy data for illustration)
     const teamData = [
-        { name: 'Devavrat', role: 'AI/ML Head', avatar: 'https://randomuser.me/api/portraits/men/1.jpg', bg: '#f3f3f3' },
-        { name: 'Ajinkya', role: 'Web Developer', avatar: 'https://randomuser.me/api/portraits/men/2.jpg', bg: '#dfe4ea' },
-        { name: 'Shreya', role: 'Android Developer', avatar: 'https://randomuser.me/api/portraits/women/1.jpg', bg: '#a4b0be' },
-        { name: 'Atharv', role: 'Flutter Head', avatar: 'https://randomuser.me/api/portraits/men/3.jpg', bg: '#dfe4ea' },
-        { name: 'Vedant', role: 'Graphic Designer', avatar: 'https://randomuser.me/api/portraits/men/4.jpg', bg: '#f3f3f3' },
-        { name: 'Ashutosh', role: 'Web Developer', avatar: 'https://randomuser.me/api/portraits/men/5.jpg', bg: '#a4b0be' },
-        { name: 'Kunal', role: 'Event Manager', avatar: 'https://randomuser.me/api/portraits/men/6.jpg', bg: '#dfe4ea' },
+        { name: 'Supriya Gadekar', role: 'Faculty Advisor', avatar: 'https://randomuser.me/api/portraits/women/4.jpg', bg: '#a4b0be' },
         { name: 'Sanidhya', role: 'GDG Organizer', avatar: 'https://randomuser.me/api/portraits/men/7.jpg', bg: '#f3f3f3' },
-        { name: 'Kushal', role: 'Android Developer', avatar: 'https://randomuser.me/api/portraits/men/8.jpg', bg: '#dfe4ea' },
-        { name: 'Anay', role: 'Social Media & Outreach Manager', avatar: 'https://randomuser.me/api/portraits/men/9.jpg', bg: '#a4b0be' },
         { name: 'Aryan', role: 'Co Organizer', avatar: 'https://randomuser.me/api/portraits/men/10.jpg', bg: '#f3f3f3' },
         { name: 'Mehvish', role: 'Event Manager', avatar: 'https://randomuser.me/api/portraits/women/2.jpg', bg: '#dfe4ea' },
+        { name: 'Kunal', role: 'Event Manager', avatar: 'https://randomuser.me/api/portraits/men/6.jpg', bg: '#dfe4ea' },
+        { name: 'Ajinkya', role: 'Web Developer', avatar: 'https://randomuser.me/api/portraits/men/2.jpg', bg: '#dfe4ea' },
+        { name: 'Ashutosh', role: 'Web Developer', avatar: 'https://randomuser.me/api/portraits/men/5.jpg', bg: '#a4b0be' },
+        { name: 'Devavrat', role: 'AI/ML Head', avatar: 'https://randomuser.me/api/portraits/men/1.jpg', bg: '#f3f3f3' },
+        { name: 'Shreya', role: 'Android Developer', avatar: 'https://randomuser.me/api/portraits/women/1.jpg', bg: '#a4b0be' },
+        { name: 'Kushal', role: 'Android Developer', avatar: 'https://randomuser.me/api/portraits/men/8.jpg', bg: '#dfe4ea' },
+        { name: 'Vedant', role: 'Graphic Designer', avatar: 'https://randomuser.me/api/portraits/men/4.jpg', bg: '#f3f3f3' },
         { name: 'Shubham', role: 'Graphic Designer', avatar: 'https://randomuser.me/api/portraits/men/11.jpg', bg: '#a4b0be' },
         { name: 'Arya', role: 'Content Creator', avatar: 'https://randomuser.me/api/portraits/women/3.jpg', bg: '#f3f3f3' },
+        { name: 'Atharv', role: 'Flutter Head', avatar: 'https://randomuser.me/api/portraits/men/3.jpg', bg: '#dfe4ea' },
         { name: 'Vedant', role: 'Social Media & Outreach Manager', avatar: 'https://randomuser.me/api/portraits/men/12.jpg', bg: '#dfe4ea' },
-        { name: 'Supriya Gadekar', role: 'Faculty Advisor', avatar: 'https://randomuser.me/api/portraits/women/4.jpg', bg: '#a4b0be' }
+        { name: 'Anay', role: 'Social Media & Outreach Manager', avatar: 'https://randomuser.me/api/portraits/men/9.jpg', bg: '#a4b0be' },
     ];
 
 

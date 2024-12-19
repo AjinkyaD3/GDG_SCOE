@@ -11,18 +11,21 @@ const port = 3000;
 const db = process.env.DB;  // Get the connection string from the environment variable
 
 let dbstring = String(db);
-// mongoose.connect(db, {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true
-// });
+mongoose.connect(dbstring, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+});
 
 app.use(bodyParser.json());
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+
 app.use('/api/blogs', blogRoutes);
 app.use('/api/admin', adminRoutes);
 
-// Serve static files from the 'public' folder
-app.use(express.static(path.join(__dirname, 'public'))); app.get('/', (req, res) => {
+
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 

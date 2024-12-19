@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login & Signup</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 400px;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .switch {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .switch a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .switch a:hover {
+            text-decoration: underline;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" id="form-container">
+        <!-- Dynamic content will be rendered here -->
+    </div>
+
+    <script>
+        // State for toggling between Login and Signup
+        const renderForm = (isLogin = true) => {
+            document.getElementById('form-container').innerHTML = `
+        <h2>${isLogin ? 'Admin Login' : 'Admin Signup'}</h2>
+        <form id="${isLogin ? 'login-form' : 'signup-form'}">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required />
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required />
+          </div>
+          ${!isLogin
+                    ? `
+              <div class="form-group">
+                <label for="role">Role (Optional)</label>
+                <input type="text" id="role" name="role" />
+              </div>
+            `
+                    : ''
+                }
+          <div class="error" id="error-msg"></div>
+          <button type="submit">${isLogin ? 'Login' : 'Signup'}</button>
+        </form>
+        <div class="switch">
+          <p>${isLogin ? 'Don\'t have an account?' : 'Already have an account?'} 
+            <a href="#" id="switch-link">${isLogin ? 'Signup' : 'Login'}</a>
+          </p>
+        </div>
+      `;
+            // Attach event listeners
+            document.getElementById(`${isLogin ? 'login-form' : 'signup-form'}`).addEventListener('submit', (e) => handleSubmit(e, isLogin));
+            document.getElementById('switch-link').addEventListener('click', (e) => {
+                e.preventDefault();
+                renderForm(!isLogin);
+            });
+        };
+
+        // Handle Form Submission
+        const handleSubmit = async (e, isLogin) => {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const role = !isLogin ? document.getElementById('role').value : undefined;
+
+            const endpoint = isLogin ? '/login' : '/setup';
+            const payload = isLogin ? { username, password } : { username, password, role };
+
+            try {
+                const response = await fetch(endpoint, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload),
+                });
+
+                const data = await response.json();
+
+                if (!response.ok) {
+                    document.getElementById('error-msg').textContent = data.error || 'Something went wrong!';
+                } else {
+                    alert(data.message || 'Success!');
+                    if (isLogin) {
+                        // Redirect or perform login action
+                        console.log('JWT Token:', data.token);
+                    }
+                }
+            } catch (err) {
+                document.getElementById('error-msg').textContent = 'Network error, please try again later!';
+            }
+        };
+
+        // Initial render
+        renderForm();
+    </script>
+</body>
+
+</html>
