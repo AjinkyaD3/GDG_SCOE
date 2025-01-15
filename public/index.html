@@ -8,8 +8,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-    <!-- <link rel="stylesheet" href="./styles.css">
-  <link rel="stylesheet" href="./responsive.css"> -->
 </head>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
@@ -937,6 +935,8 @@
         object-fit: cover;
     }
 
+
+
     .detail {
         padding: 1.5625rem 1.25rem;
         font-weight: 600;
@@ -970,6 +970,38 @@
         font-style: normal;
         font-weight: 500;
         line-height: normal;
+
+
+
+
+
+
+    }
+
+    /* Default styles for .teamsectiondiv */
+    .teamsectiondiv {
+        width: 100%;
+        /* Full width by default */
+        max-width: 1200px;
+        /* Maximum width for larger screens */
+        margin: 0 auto;
+        /* Center the div */
+        padding: 20px;
+        /* Add some padding */
+       overflow: hidden;
+
+    }
+
+    /* Media query for mobile devices (e.g., screens less than 768px wide) */
+    @media screen and (max-width: 768px) {
+        .teamsectiondiv {
+            width: 90%;
+            /* Reduce width to 90% of the screen */
+            max-width: 100%;
+            /* Allow it to take full width if needed */
+            padding: 10px;
+            /* Reduce padding for smaller screens */
+        }
     }
 
     /* FAQ Section */
@@ -1403,13 +1435,22 @@
             <a href="#events">Events</a>
             <a href="#team">Team</a>
             <a href="#blog">Blog</a>
-            <!-- <a href="#Partner">Partner</a> -->
-            <!-- <a href="#faq">FAQ's</a> -->
         </div>
         <button class="join-btn"><a
                 href="https://gdg.community.dev/gdg-on-campus-sinhgad-college-of-engineering-pune-india/">Connect with
                 us</a></button>
         <div class="mobile-menu">☰</div>
+        <div class="mobile-nav">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#events">Events</a>
+            <a href="#team">Team</a>
+            <a href="#blog">Blog</a>
+            <button class="join-btn"><a
+                    href="https://gdg.community.dev/gdg-on-campus-sinhgad-college-of-engineering-pune-india/">Connect
+                    with
+                    us</a></button>
+        </div>
     </nav>
 
     <section class="hero" id="home" data-aos="fade-up">
@@ -1417,9 +1458,7 @@
         <p>Google Developer Groups (GDG) are global communities <br> designed to bring developers together to share
             knowledge, <br>
             collaborate, and innovate using Google technologies.</p>
-        <!-- <button class="notify-btn">Get notified</button> -->
         <div class="email-form">
-            <!-- <input type="email" placeholder="Example@gmail.com" class="email-input"> -->
             <button class="notify-btn"><a
                     href="https://gdg.community.dev/gdg-on-campus-sinhgad-college-of-engineering-pune-india/">Join
                     Us</a></button>
@@ -1503,8 +1542,6 @@
         </div>
     </section>
 
-
-
     <section class="devider"> </section>
 
     <!-- Events Section -->
@@ -1548,193 +1585,181 @@
                 </div>
             </div>
         </div>
-
     </section>
-
-
-    <!-- Devider  -->
 
     <section class="devider"> </section>
 
-    <section id="team" class="team-section" data-aos="fade-up">
-        <h1>MEET OUR CORE TEAM</h1>
+    <div class="teamsectiondiv">
+        <section id="team" class="team-section" data-aos="fade-up">
+            <h1>MEET OUR CORE TEAM</h1>
 
-        <!-- Slider main container -->
-        <div class="swiper-container">
-            <!-- Additional required wrapper -->
-            <div class="swiper-wrapper">
-                <!-- Slides -->
-                <div class="swiper-slide">
-                    <div class="picture">
-                        <img src="https://fastly.picsum.photos/id/826/200/300.jpg?hmac=OsVdvGZW1U_-FFoJfJrFVB-9hw0tx1H9ZyEqEaA1W10"
-                            alt="Devavrat">
+            <!-- Slider main container -->
+            <div class="swiper-container">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide">
+                        <div class="picture">
+                            <img src="https://fastly.picsum.photos/id/826/200/300.jpg?hmac=OsVdvGZW1U_-FFoJfJrFVB-9hw0tx1H9ZyEqEaA1W10"
+                                alt="Devavrat">
+                        </div>
+                        <div class="detail">
+                            <h3>Devavrat</h3>
+                            <span>AI/ML Head</span>
+                        </div>
                     </div>
-                    <div class="detail">
-                        <h3>Devavrat</h3>
-                        <span>AI/ML Head</span>
+                    <div class="swiper-slide">
+                        <div class="picture">
+                            <img src="https://fastly.picsum.photos/id/826/200/300.jpg?hmac=OsVdvGZW1U_-FFoJfJrFVB-9hw0tx1H9ZyEqEaA1W10"
+                                alt="Ajinkya">
+                        </div>
+                        <div class="detail">
+                            <h3>Ajinkya</h3>
+                            <span>Web Developer</span>
+                        </div>
                     </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="picture">
-                        <img src="https://fastly.picsum.photos/id/826/200/300.jpg?hmac=OsVdvGZW1U_-FFoJfJrFVB-9hw0tx1H9ZyEqEaA1W10"
-                            alt="Ajinkya">
+                    <div class="swiper-slide">
+                        <div class="picture">
+                            <img src="https://fastly.picsum.photos/id/826/200/300.jpg?hmac=OsVdvGZW1U_-FFoJfJrFVB-9hw0tx1H9ZyEqEaA1W10"
+                                alt="Shreya">
+                        </div>
+                        <div class="detail">
+                            <h3>Shreya</h3>
+                            <span>Android Developer</span>
+                        </div>
                     </div>
-                    <div class="detail">
-                        <h3>Ajinkya</h3>
-                        <span>Web Developer</span>
+                    <div class="swiper-slide">
+                        <div class="picture">
+                            <img src="https://fastly.picsum.photos/id/826/200/300.jpg?hmac=OsVdvGZW1U_-FFoJfJrFVB-9hw0tx1H9ZyEqEaA1W10"
+                                alt="Atharv">
+                        </div>
+                        <div class="detail">
+                            <h3>Atharv</h3>
+                            <span>Flutter Head</span>
+                        </div>
                     </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="picture">
-                        <img src="https://fastly.picsum.photos/id/826/200/300.jpg?hmac=OsVdvGZW1U_-FFoJfJrFVB-9hw0tx1H9ZyEqEaA1W10"
-                            alt="Shreya">
+                    <div class="swiper-slide">
+                        <div class="picture">
+                            <img src="https://fastly.picsum.photos/id/826/200/300.jpg?hmac=OsVdvGZW1U_-FFoJfJrFVB-9hw0tx1H9ZyEqEaA1W10"
+                                alt="Vedant">
+                        </div>
+                        <div class="detail">
+                            <h3>Vedant</h3>
+                            <span>Graphic Designer</span>
+                        </div>
                     </div>
-                    <div class="detail">
-                        <h3>Shreya</h3>
-                        <span>Android Developer</span>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="picture">
-                        <img src="https://fastly.picsum.photos/id/826/200/300.jpg?hmac=OsVdvGZW1U_-FFoJfJrFVB-9hw0tx1H9ZyEqEaA1W10"
-                            alt="Atharv">
-                    </div>
-                    <div class="detail">
-                        <h3>Atharv</h3>
-                        <span>Flutter Head</span>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="picture">
-                        <img src="https://fastly.picsum.photos/id/826/200/300.jpg?hmac=OsVdvGZW1U_-FFoJfJrFVB-9hw0tx1H9ZyEqEaA1W10"
-                            alt="Vedant">
-                    </div>
-                    <div class="detail">
-                        <h3>Vedant</h3>
-                        <span>Graphic Designer</span>
-                    </div>
-                </div>
 
-                <div class="swiper-slide">
-                    <div class="picture">
-                        <img src="https://fastly.picsum.photos/id/826/200/300.jpg?hmac=OsVdvGZW1U_-FFoJfJrFVB-9hw0tx1H9ZyEqEaA1W10"
-                            alt="Shubham">
+                    <div class="swiper-slide">
+                        <div class="picture">
+                            <img src="https://fastly.picsum.photos/id/826/200/300.jpg?hmac=OsVdvGZW1U_-FFoJfJrFVB-9hw0tx1H9ZyEqEaA1W10"
+                                alt="Shubham">
+                        </div>
+                        <div class="detail">
+                            <h3>Shubham</h3>
+                            <span>Graphic Designer</span>
+                        </div>
                     </div>
-                    <div class="detail">
-                        <h3>Shubham</h3>
-                        <span>Graphic Designer</span>
-                    </div>
-                </div>
 
-                <div class="swiper-slide">
-                    <div class="picture">
-                        <img src="https://fastly.picsum.photos/id/826/200/300.jpg?hmac=OsVdvGZW1U_-FFoJfJrFVB-9hw0tx1H9ZyEqEaA1W10"
-                            alt="Ashutosh">
+                    <div class="swiper-slide">
+                        <div class="picture">
+                            <img src="https://fastly.picsum.photos/id/826/200/300.jpg?hmac=OsVdvGZW1U_-FFoJfJrFVB-9hw0tx1H9ZyEqEaA1W10"
+                                alt="Ashutosh">
+                        </div>
+                        <div class="detail">
+                            <h3>Ashutosh</h3>
+                            <span>Web Developer</span>
+                        </div>
                     </div>
-                    <div class="detail">
-                        <h3>Ashutosh</h3>
-                        <span>Web Developer</span>
+                    <div class="swiper-slide">
+                        <div class="picture">
+                            <img src="https://fastly.picsum.photos/id/826/200/300.jpg?hmac=OsVdvGZW1U_-FFoJfJrFVB-9hw0tx1H9ZyEqEaA1W10"
+                                alt="Kunal">
+                        </div>
+                        <div class="detail">
+                            <h3>Kunal</h3>
+                            <span>Event Manager</span>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="picture">
+                            <img src="https://fastly.picsum.photos/id/826/200/300.jpg?hmac=OsVdvGZW1U_-FFoJfJrFVB-9hw0tx1H9ZyEqEaA1W10"
+                                alt="Sanidhya">
+                        </div>
+                        <div class="detail">
+                            <h3>Sanidhya</h3>
+                            <span>GDG Organizer</span>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="picture">
+                            <img src="https://fastly.picsum.photos/id/826/200/300.jpg?hmac=OsVdvGZW1U_-FFoJfJrFVB-9hw0tx1H9ZyEqEaA1W10"
+                                alt="Kushal">
+                        </div>
+                        <div class="detail">
+                            <h3>Kushal</h3>
+                            <span>Android Developer</span>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="picture">
+                            <img src="https://fastly.picsum.photos/id/826/200/300.jpg?hmac=OsVdvGZW1U_-FFoJfJrFVB-9hw0tx1H9ZyEqEaA1W10"
+                                alt="Anay">
+                        </div>
+                        <div class="detail">
+                            <h3>Anay</h3>
+                            <span>Social Media & Outreach Manager</span>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="picture">
+                            <img src="https://fastly.picsum.photos/id/826/200/300.jpg?hmac=OsVdvGZW1U_-FFoJfJrFVB-9hw0tx1H9ZyEqEaA1W10"
+                                alt="Aryan">
+                        </div>
+                        <div class="detail">
+                            <h3>Aryan</h3>
+                            <span>Co Organizer</span>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="picture">
+                            <img src="https://fastly.picsum.photos/id/826/200/300.jpg?hmac=OsVdvGZW1U_-FFoJfJrFVB-9hw0tx1H9ZyEqEaA1W10"
+                                alt="Mehvish">
+                        </div>
+                        <div class="detail">
+                            <h3>Mehvish</h3>
+                            <span>Event Manager</span>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="picture">
+                            <img src="https://fastly.picsum.photos/id/826/200/300.jpg?hmac=OsVdvGZW1U_-FFoJfJrFVB-9hw0tx1H9ZyEqEaA1W10"
+                                alt="Arya">
+                        </div>
+                        <div class="detail">
+                            <h3>Arya</h3>
+                            <span>Content Creator</span>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="picture">
+                            <img src="https://fastly.picsum.photos/id/826/200/300.jpg?hmac=OsVdvGZW1U_-FFoJfJrFVB-9hw0tx1H9ZyEqEaA1W10"
+                                alt="Supriya Gadekar">
+                        </div>
+                        <div class="detail">
+                            <h3>Supriya Gadekar</h3>
+                            <span>Faculty Advisor</span>
+                        </div>
                     </div>
                 </div>
-                <div class="swiper-slide">
-                    <div class="picture">
-                        <img src="https://fastly.picsum.photos/id/826/200/300.jpg?hmac=OsVdvGZW1U_-FFoJfJrFVB-9hw0tx1H9ZyEqEaA1W10"
-                            alt="Kunal">
-                    </div>
-                    <div class="detail">
-                        <h3>Kunal</h3>
-                        <span>Event Manager</span>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="picture">
-                        <img src="https://fastly.picsum.photos/id/826/200/300.jpg?hmac=OsVdvGZW1U_-FFoJfJrFVB-9hw0tx1H9ZyEqEaA1W10"
-                            alt="Sanidhya">
-                    </div>
-                    <div class="detail">
-                        <h3>Sanidhya</h3>
-                        <span>GDG Organizer</span>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="picture">
-                        <img src="https://fastly.picsum.photos/id/826/200/300.jpg?hmac=OsVdvGZW1U_-FFoJfJrFVB-9hw0tx1H9ZyEqEaA1W10"
-                            alt="Kushal">
-                    </div>
-                    <div class="detail">
-                        <h3>Kushal</h3>
-                        <span>Android Developer</span>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="picture">
-                        <img src="https://fastly.picsum.photos/id/826/200/300.jpg?hmac=OsVdvGZW1U_-FFoJfJrFVB-9hw0tx1H9ZyEqEaA1W10"
-                            alt="Anay">
-                    </div>
-                    <div class="detail">
-                        <h3>Anay</h3>
-                        <span>Social Media & Outreach Manager</span>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="picture">
-                        <img src="https://fastly.picsum.photos/id/826/200/300.jpg?hmac=OsVdvGZW1U_-FFoJfJrFVB-9hw0tx1H9ZyEqEaA1W10"
-                            alt="Aryan">
-                    </div>
-                    <div class="detail">
-                        <h3>Aryan</h3>
-                        <span>Co Organizer</span>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="picture">
-                        <img src="https://fastly.picsum.photos/id/826/200/300.jpg?hmac=OsVdvGZW1U_-FFoJfJrFVB-9hw0tx1H9ZyEqEaA1W10"
-                            alt="Mehvish">
-                    </div>
-                    <div class="detail">
-                        <h3>Mehvish</h3>
-                        <span>Event Manager</span>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="picture">
-                        <img src="https://fastly.picsum.photos/id/826/200/300.jpg?hmac=OsVdvGZW1U_-FFoJfJrFVB-9hw0tx1H9ZyEqEaA1W10"
-                            alt="Arya">
-                    </div>
-                    <div class="detail">
-                        <h3>Arya</h3>
-                        <span>Content Creator</span>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="picture">
-                        <img src="https://fastly.picsum.photos/id/826/200/300.jpg?hmac=OsVdvGZW1U_-FFoJfJrFVB-9hw0tx1H9ZyEqEaA1W10"
-                            alt="Supriya Gadekar">
-                    </div>
-                    <div class="detail">
-                        <h3>Supriya Gadekar</h3>
-                        <span>Faculty Advisor</span>
-                    </div>
-                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
             </div>
-            <!-- If we need pagination -->
-            <div class="swiper-pagination"></div>
-        </div>
-
-
-    </section>
-
-
-
-
-    <!-- Devider  -->
+        </section>
+    </div>
 
     <section class="devider"> </section>
-
-
 
     <!-- Blog section-->
-
     <section id="blog" class="blog-section">
         <h1> Blogs </h1>
 
@@ -1832,10 +1857,6 @@
         </div>
     </section>
 
-
-
-    <!-- Devider  -->
-
     <section class="devider"> </section>
 
     <section id="faq" class="faq-section" data-aos="fade-up">
@@ -1892,8 +1913,6 @@
             </div>
         </div>
     </section>
-
-
 
     <footer class="footer">
         <div class="footer-content">
@@ -1974,10 +1993,7 @@
         </div>
     </footer>
 
-
-
     <script>
-
         // Initialize AOS animation library
         AOS.init({
             duration: 1000,
@@ -1996,10 +2012,10 @@
 
         // Mobile menu toggle
         const mobileMenu = document.querySelector('.mobile-menu');
-        const navLinks = document.querySelector('.nav-links');
+        const mobileNav = document.querySelector('.mobile-nav');
         mobileMenu.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            mobileMenu.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+            mobileNav.classList.toggle('active');
+            mobileMenu.textContent = mobileNav.classList.contains('active') ? '✕' : '☰';
         });
 
         // Smooth scroll for navigation links
@@ -2012,15 +2028,11 @@
                         behavior: 'smooth'
                     });
                     // Close mobile menu if open
-                    navLinks.classList.remove('active');
+                    mobileNav.classList.remove('active');
                     mobileMenu.textContent = '☰';
                 }
             });
         });
-
-
-
-
 
         // for team slider
         var swiper = new Swiper(".swiper-container", {
@@ -2078,15 +2090,6 @@
                 question.setAttribute('aria-expanded', String(!isExpanded));
             }
         });
-
-
-
-
-
-
-
-
-
 
         // FOR FOOTER 
         document.addEventListener('DOMContentLoaded', () => {
